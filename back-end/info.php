@@ -46,6 +46,8 @@ if ($errCode == 0) {
             setcookie("username", $name , time() + (86400 * 30), "/");
             setcookie("password", $password, time() + (86400 * 30), "/");
         }else{
+            $errCode = 1;
+            $errMessage = "Anda Belum Login";
             setcookie("username", $name , time() - (86400 * 30), "/");
             setcookie("password", $password, time() - (86400 * 30), "/");
         }

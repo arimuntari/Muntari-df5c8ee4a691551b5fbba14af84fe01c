@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-<div id="timenow">sadasdasd</div>
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>Test MKM 2020 - Muntari </strong>
+            </a>
+        </div>
+    </div>
+</header>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Jam Digital</h1>
+        <h1 id="timenow" class="jumbotron-heading">sadasdasd
+        </h1>
+        <p>
+            <button type="button" class="btn btn-success" onclick="getInfo()">Hello</button>
+        </p>
+        <h1 id="info" class="jumbotron-heading"></h1>
+    </div>
+</section>
 
-<button type="button" onclick="getInfo()">Hello</button>
-<div id="info"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script>
@@ -26,6 +44,8 @@
                     var login= "Hai "+response.data[0].username+", waktu login anda "+response.data[0].last_login;
                     $("#info").html(login);
                 }else{
+                    var login= "Anda Belum Login";
+                    $("#info").html(login);
                     window.location.href= "login.html";
                 }
             },

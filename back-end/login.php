@@ -41,10 +41,14 @@ if ($errCode == 0) {
 if ($errCode == 0) {
     try {
         $data = $users->get($name, $password);
-        if(count($data)> 0){
+        if(count($data) > 0){
             $users->update($name, $userAgent);
             setcookie("username", $name , time() + (86400 * 30), "/");
             setcookie("password", $password, time() + (86400 * 30), "/");
+        }else{
+
+            $errCode = 1;
+            $errMessage = "Akun tidak ditemukan";
         }
     } catch (Exception $ex) {
         $errCode = 1;
